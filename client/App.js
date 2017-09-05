@@ -97,13 +97,15 @@ const connectToStore = ({store, onEnter}) => {
 const status = (type) => ({
   awake: "Nå er Tuva våken",
   asleep: "Nå sover Tuva",
-  eating: "Nå spiser Tuva"
+  eating: "Nå spiser Tuva",
+  pooping: "Tuva har bæsjet"
 }[type] || `Unkjent statuskode '${type}'`);
 
 const formVerb = (type) => ({
   awake: "våknet",
   asleep: "sovnet",
-  eating: "startet"
+  eating: "startet",
+  pooping: "bæsjet"
 }[type] || `Unkjent statuskode '${type}'`);
 
 const formatTime = (time) => "kl. " + format(time, "HH.mm");
@@ -134,6 +136,10 @@ const Dashboard = connectToStore({store, onEnter})(({type, time}) => (
       <br /><br />
 
       <Link to="/eating">Tuva spiser</Link>
+
+      <br /><br />
+
+      <Link to="/pooping">Tuva har bæsja</Link>
 
       <br /><br />
 
@@ -215,6 +221,10 @@ const RegisterEating = () => (
   <Register type="eating" title="Tuva spiser" />
 )
 
+const RegisterPooping = () => (
+  <Register type="pooping" title="Tuva bæsjet" />
+)
+
 export default class App extends React.Component {
 
   render() {
@@ -224,6 +234,7 @@ export default class App extends React.Component {
         <Route path="/awake" component={RegisterAwake}/>
         <Route path="/asleep" component={RegisterAsleep}/>
         <Route path="/eating" component={RegisterEating} />
+        <Route path="/pooping" component={RegisterPooping} />
         <Route path="/day-pie" component={DayPiePage} />
       </div>
     )

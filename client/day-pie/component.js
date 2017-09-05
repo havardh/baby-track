@@ -22,9 +22,10 @@ export default class Graph extends React.Component {
   render() {
     const {events, date} = this.props;
 
-    const data = transform(events, date);
-
-    console.log(data);
+    const data = transform(
+      events.filter(({type}) => type==="pooping"),
+      date
+    );
 
     return (
       <div>
