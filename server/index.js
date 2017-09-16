@@ -29,4 +29,11 @@ api.post("/state", function(req, res) {
   res.end();
 });
 
+api.delete("/state/:id", function(req, res) {
+  store.delete(req.params.id, () => {
+    res.json({});
+    res.end();
+  });
+});
+
 module.exports = api;

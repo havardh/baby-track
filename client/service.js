@@ -18,3 +18,10 @@ export function setState(data) {
     body: JSON.stringify(data)
   }).then(res => res.json())
 }
+
+export function deleteEvent(id) {
+  return fetch(`api/state/${id}`, {
+    credentials: "same-origin",
+    method: "DELETE"
+  }).then(res => res.json());
+}

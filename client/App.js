@@ -1,14 +1,13 @@
 import {subMinutes, format, getMinutes, getHours, setMinutes, setHours} from "date-fns";
 import React from "react";
 import DayPiePage from "./day-pie/page";
+import DayListPage from "./day-list/page";
 import * as service from "./service";
 import TimePicker from "./time-picker/component";
 
 import { Route, Link, withRouter } from "react-router-dom";
 
 const SET_STATE = 'SET_STATE';
-
-
 
 class Store {
 
@@ -145,6 +144,10 @@ const Dashboard = connectToStore({store, onEnter})(({type, time}) => (
       <br /><br />
 
       <Link to="/day-pie">Dagens pai</Link>
+
+      <br /><br />
+
+      <Link to="/day-list">Dagens liste</Link>
     </div>
   </div>
 ));
@@ -216,6 +219,7 @@ export default class App extends React.Component {
         <Route path="/asleep" component={RegisterAsleep}/>
         <Route path="/eating" component={RegisterEating} />
         <Route path="/pooping" component={RegisterPooping} />
+        <Route path="/day-list" component={DayListPage} />
         <Route path="/day-pie" component={DayPiePage} />
       </div>
     )
