@@ -2,7 +2,12 @@ const sqlite3 = require('sqlite3').verbose();
 
 class SqlStore {
   constructor() {
-    this.db = new sqlite3.Database('./db/baby-cycle');
+    if (process.env.SQL_DB) {
+      this.db = new sqlite3.Database(process.env.SQL_DB);
+    } else {
+      this.db = new sqlite3.Database('./db/baby-cycle');
+    }
+
   }
 
   add({type, time}) {
@@ -48,8 +53,6 @@ class SqlStore {
       }
     });
   }
-
-
 }
 
 module.exports = SqlStore;
