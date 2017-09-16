@@ -23,7 +23,7 @@ export default class Graph extends React.Component {
     const {events, date} = this.props;
 
     const data = transform(
-      events.filter(({type}) => type==="pooping"),
+      events.filter(({type}) => type!=="pooping"),
       date
     );
 
