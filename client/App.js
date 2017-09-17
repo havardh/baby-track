@@ -2,6 +2,7 @@ import {subMinutes, format, getMinutes, getHours, setMinutes, setHours} from "da
 import React from "react";
 import DayPiePage from "./day-pie/page";
 import DayListPage from "./day-list/page";
+import DailyBarPage from "./daily-bar/page";
 import * as service from "./service";
 import TimePicker from "./time-picker/component";
 
@@ -148,6 +149,10 @@ const Dashboard = connectToStore({store, onEnter})(({type, time}) => (
       <br /><br />
 
       <Link to="/day-list">Dagens liste</Link>
+
+      <br /><br />
+
+      <Link to="/daily-bar">Daglig bar</Link>
     </div>
   </div>
 ));
@@ -221,6 +226,7 @@ export default class App extends React.Component {
         <Route path="/pooping" component={RegisterPooping} />
         <Route path="/day-list" component={DayListPage} />
         <Route path="/day-pie" component={DayPiePage} />
+        <Route path="/daily-bar" component={DailyBarPage} />
       </div>
     )
   }
