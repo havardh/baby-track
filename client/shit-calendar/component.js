@@ -29,7 +29,7 @@ export default class Calendar extends React.Component {
         <tbody>
           {[0, 1, 2, 3, 4, 5].map(week =>
             <tr key={week}>
-              {[0, 1, 2, 3, 4, 5, 6, 7].map(day =>
+              {[0, 1, 2, 3, 4, 5, 6].map(day =>
                 <Cell
                   key={day}
                   date={cellDate(firstMonday, week, day)}
