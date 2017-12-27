@@ -21,7 +21,7 @@ export default class Calendar extends React.Component {
     const data = events.filter(({type}) => type==="pooping")
 
     const monthStart = startOfMonth(date);
-    const firstMonday = startOfWeek(monthStart);
+    const firstMonday = addDays(startOfWeek(monthStart), 1);
 
     return (
       <div>
