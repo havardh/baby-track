@@ -33,7 +33,7 @@ export default class Calendar extends React.Component {
                 <Cell
                   key={day}
                   date={cellDate(firstMonday, week, day)}
-                  isShit={shitOn(events, cellDate(firstMonday, week, day))}
+                  isShit={shitOn(data, cellDate(firstMonday, week, day))}
                 />
               )}
             </tr>
