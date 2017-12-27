@@ -3,6 +3,7 @@ import React from "react";
 import DayPiePage from "./day-pie/page";
 import DayListPage from "./day-list/page";
 import DailyBarPage from "./daily-bar/page";
+import ShitCalendarPage from "./shit-calendar/page";
 import * as service from "./service";
 import TimePicker from "./time-picker/component";
 
@@ -153,6 +154,10 @@ const Dashboard = connectToStore({store, onEnter})(({type, time}) => (
       <br /><br />
 
       <Link to="/daily-bar">Daglig bar</Link>
+
+      <br /><br />
+
+      <Link to="/shit-calendar">Bajse kalender</Link>
     </div>
   </div>
 ));
@@ -227,6 +232,7 @@ export default class App extends React.Component {
         <Route path="/day-list" component={DayListPage} />
         <Route path="/day-pie" component={DayPiePage} />
         <Route path="/daily-bar" component={DailyBarPage} />
+        <Route path="/shit-calendar" component={ShitCalendarPage} />
       </div>
     )
   }
