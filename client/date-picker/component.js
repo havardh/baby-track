@@ -87,7 +87,7 @@ class DatePicker extends React.Component {
       <span>
         <SelectFromTo name="date" from={1} to={31} value={getDate(this.props.value)} onChange={this.onChange} />
         <SelectFromTo name="month" from={0} to={11} value={getMonth(this.props.value)} onChange={this.onChange} />
-        <SelectFromTo name="year" from={1988} to={2017} value={getYear(this.props.value)} onChange={this.onChange} />
+        <SelectFromTo name="year" from={1988} to={getYear(new Date())} value={getYear(this.props.value)} onChange={this.onChange} />
       </span>
     )
   }
