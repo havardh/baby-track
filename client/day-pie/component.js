@@ -13,8 +13,7 @@ const colors = {
 
 function color(event) {
   const {type} = event;
-
-  console.log(event, type, colors[type]);
+  
    return colors[type];
 }
 

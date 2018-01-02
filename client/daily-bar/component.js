@@ -47,9 +47,6 @@ function filter(events, type, lastBefore) {
 
 export default class DayBar extends React.Component {
   render() {
-
-    console.log(this.props.date, this.props.lastBefore);
-
     return (
       <div>
         <h2>{format(this.props.date, "DD-MM-YYYY")}</h2>
